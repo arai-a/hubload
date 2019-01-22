@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "hub load",
+  "version": "0.1",
+  "description": "Add a button to load all diffs in GitHub PR page.",
+
+  "permissions": [
+    "storage",
+    "https://github.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/pull/*"
+      ],
+      "js": [
+        "hubload.js"
+      ]
+    }
+  ],
+
+  "applications": {
+    "gecko": {
+      "id": "hubload@unmht.org",
+      "strict_min_version": "62.0"
+    }
+  }
+}
